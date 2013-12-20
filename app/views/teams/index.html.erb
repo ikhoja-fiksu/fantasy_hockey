@@ -1,0 +1,11 @@
+<h1>See the teams:</h1>
+<table>
+	<% @teams.each do |team| %>
+		<tr>
+			<td>
+				<%= team.name %>
+				<%= link_to 'Roster', 'teams#show' %>
+			</td>
+		</tr>
+	<% end %>
+</table>
