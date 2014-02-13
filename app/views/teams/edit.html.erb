@@ -1,0 +1,13 @@
+<h1><%= @team.name %></h1>
+<%= form_for :team, url: team_path(@team), method: :put do |f| %>
+	<p>
+		<%= f.label :name %><br>
+		<%= f.text_field :name %>
+	</p>
+		<%= f.submit %>
+	<% end %>
+<h2>See your players</h2>
+<%= render partial: 'list_players', locals: { contracts: @team.contracts } %>
+<h2>Sign a Player</h2>
+<%= render partial: 'teams/contracts/form' %>
+<h3><%= link_to 'Home', root_path %>

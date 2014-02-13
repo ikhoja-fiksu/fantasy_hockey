@@ -7,8 +7,9 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+<div id="header"><span class="header-navigation-links"><%= link_to 'Home', root_path, {class: "header-navigation-link"} %><span></div>
+<div class="app-wrapper">
+	<%= yield %>
+</div>
 </body>
 </html>

@@ -1,0 +1,12 @@
+<h1>See the players:</h1>
+<table>
+	<% @players.each do |player| %>
+		<tr>
+			<td>
+				<%= player.name %>
+			</td>
+		</tr>
+	<% end %>
+</table>
+<h2><%= link_to 'Create New Player', new_player_path %></h2>
+<h2><%= link_to 'Home', root_path %></h2>

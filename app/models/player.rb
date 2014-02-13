@@ -1,5 +1,7 @@
 class Player < ActiveRecord::Base
 	has_many :scores
+	has_many :teams, through: :contracts
+	has_many :contracts
 	validates_presence_of :name
 
 	def play(game_id)

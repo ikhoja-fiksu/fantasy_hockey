@@ -1,6 +1,7 @@
 class Team < ActiveRecord::Base
 	belongs_to :user
 	has_many :contracts
+	has_many :players, through: :contracts
 	has_one :point_total
 	validates_presence_of :user_id
 
@@ -13,7 +14,9 @@ class Team < ActiveRecord::Base
 		end
 	end
 
-
+	def draftable_players
+		Player.all
+	end
 
 	# def create_contracts( player_ids )
 	# 	# team_id = Team.where( id: team_id ).first

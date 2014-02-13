@@ -1,0 +1,9 @@
+<h1><%= @player.name %></h1>
+<%= form_for :player, url: player_path(@player), method: :put do |f| %>
+	<p>
+		<%= f.label :name %><br>
+		<%= f.text_field :name %>
+	</p>
+		<%= f.submit %>
+	<% end %>
+<h3><%= link_to 'Home', root_path %>

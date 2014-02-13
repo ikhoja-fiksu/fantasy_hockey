@@ -5,7 +5,10 @@ FantasyHockey::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # look in the teams controller for the index method
   root 'teams#index'
-  resources :teams
+  resources :teams do
+    resources :contracts
+  end
+  resources :players
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

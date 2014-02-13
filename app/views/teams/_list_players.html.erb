@@ -1,0 +1,14 @@
+<div class="player-container">
+	<div class="faceoff-circle"></div>
+	<ul class="player-list"><% contracts.first(6).each do |contract| %>
+		<li class="player-list-bullet"><%= link_to contract.player.name, player_path(contract.player)%><%= link_to ' Edit', edit_player_path(contract.player) %>
+			<div class="position-details">
+			</div>
+		</li>
+		<% end %>
+	</ul>
+</div>
+<ul class="bench-roster"><% (contracts - contracts.first(6)).each do |contract| %>
+		<li class="player-list-bullet"><%= link_to contract.player.name, player_path(contract.player)%><%= link_to ' Edit', edit_player_path(contract.player) %>
+		<% end %>
+	</ul>

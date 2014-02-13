@@ -1,0 +1,7 @@
+<%= form_for @team.contracts.new, url: team_contracts_path(@team) do |f| %>
+	<p>
+		<%= f.label "Select your player" %><br>
+		<%= f.select :player_id, Player.all.map{ |player| [player.name, player.id ] } %>
+		<%= f.submit "Sign Player" %>
+	</p>
+	<% end %>

@@ -1,0 +1,20 @@
+<%= form_for :player, url: players_path do |f| %>
+	<p>
+		<%= f.label :name %><br>
+		<%= f.text_field :name %>
+	</p>
+
+	<p>
+		<%= f.label :height %><br>
+		<%= f.select :height, [['5\' 5', 65 ], ['5\' 6', 66], ['5\' 5', 67 ]] %>
+	</p>
+
+	<p>
+		<%= f.label :weight %><br>
+		<%= f.select :weight, [[ 65 ], [ 75 ], [ 85 ]] %>
+	</p>
+
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>

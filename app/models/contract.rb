@@ -2,6 +2,7 @@ class Contract < ActiveRecord::Base
 	belongs_to :team
 	belongs_to :player
 	validates_presence_of :team_id, :player_id
+	validates :player_id, :uniqueness => {:scope => :team_id }
 
 	# def sign(player_id, team_id)
 	# 	player = Player.find(player_id)
