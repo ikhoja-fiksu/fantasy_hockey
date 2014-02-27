@@ -55,6 +55,7 @@
 	overflow: hidden;
 	text-align: center;
 	display: inline-block;
+	position: relative;
 }
 
 .faceoff-circle {
@@ -63,35 +64,69 @@
 	border-radius: 150px;
 	border: 3px solid red;
 	margin-top: -152px;
-	margin-left: auto;
-	margin-right: auto;
+	left: 146px;
+	position: absolute;
 }
 
-/*.goalie-box {
-	height: 50px;
-	width: 50px;
-	border-radius: 60px;
-	border: 2px solid red;
-	margin-top: 300px;
-	margin-left: auto;
-	margin-right: auto;
-} */
+.goalie-box {
+	height: 75px;
+	width: 150px;
+	border-radius: 75px 75px 0 0;
+	border: 3px solid red;
+	left: 222px;
+	bottom: 100px;
+	position: absolute;
+} 
+
+.player-list-bullet {
+	display: inline-block;
+}
 
 .player-list-bullet:nth-child(-n+6) {
-	width: 25%;
+	width: 100px;
 	height: 75px;
-	display: inline-block;
-	margin: 10px;
 }
+
+.player-list > .player-list-bullet:nth-child(1) {
+	right: 40px;
+	position: relative;
+}
+
+.player-list > .player-list-bullet:nth-child(3) {
+	left: 40px;
+	position: relative;
+}
+
+.player-list > .player-list-bullet:nth-child(4) {
+	left: 55px;
+	top: 40px;
+	position: relative;
+}
+
+.player-list > .player-list-bullet:nth-child(5) {
+	position: relative;
+	top: 170px;
+}
+
+.player-list > .player-list-bullet:nth-child(6) {
+	right: 55px;
+	top: 40px;
+	position: relative;
+}
+
 .player-list-bullet:nth-child(-n+6) > .position-details {
-	width: 60px;
-	height: 60px;
+	width: 100px;
+	height: 100px;
 	border-radius: 10px;
 	background-color: #D3D3D3;
 	position: relative;
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
+}
+
+.player-list > .player-list-bullet {
+	margin: 10px 25px;
 }
 
 .player-list {
@@ -105,10 +140,21 @@
 
 .bench-roster {
 	display: inline-block;
-	width: 250px;
+	width: 325px;
+	list-style: none;
 	vertical-align: top;
 	margin-top: 100px;
 	background-color: #D3D3D3;
 	border-radius: 10px;
+}
+
+.bench-roster > .player-list-bullet {
+	border: 3px solid purple;
+	vertical-align: top;
+}
+
+.bench-roster > .player-list-bullet:nth-child(n+7):nth-child(-n+10) {
+	border: 2px solid blue;
+	width: 46%;
 }
 

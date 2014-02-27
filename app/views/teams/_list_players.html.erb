@@ -10,6 +10,6 @@
 	</ul>
 </div>
 <ul class="bench-roster"><% (contracts - contracts.first(6)).each do |contract| %>
-		<li class="player-list-bullet" "player-list"><%= link_to contract.player.name, player_path(contract.player)%><%= link_to ' Edit', edit_player_path(contract.player) %>
+		<li class="player-list-bullet "><%= link_to contract.player.name, player_path(contract.player)%><%= link_to ' Edit', edit_player_path(contract.player) %>
 		<% end %>
 	</ul>
