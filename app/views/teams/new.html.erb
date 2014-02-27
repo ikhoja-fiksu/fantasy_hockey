@@ -1,0 +1,11 @@
+<h1>Build your team</h1>
+
+<%= form_for :team, url: teams_path do |f| %>
+	<p>
+		<%= f.label :name, raw("Name your Team:") %><br>
+		<%= f.text_field :name %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>

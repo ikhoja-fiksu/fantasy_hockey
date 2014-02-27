@@ -1,0 +1,25 @@
+<h1>Welcome to Draft.ly</h1>
+<h2>We're the best fantasy hockey app you've ever seen. You can bet on it. </h2>
+
+<h3>Build your dream team by signing up below:</h3>
+
+<%= form_for :user, url: users_path do |f| %>
+	<p>
+		<%= f.label :name %><br>
+		<%= f.text_field :name %>
+	</p>
+
+	<p>
+		<%= f.label :email %><br>
+		<%= f.text_field :email %>
+	</p>
+
+	<p>
+		<%= f.label :password %><br>
+		<%= f.password_field :password %>
+	</p>
+
+	<p>
+		<%= f.submit "Sign Up" %>
+	</p>
+<% end %>
