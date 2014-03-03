@@ -3,7 +3,7 @@
 
 <h3>Build your dream team by signing up below:</h3>
 
-<%= form_for :user, url: users_path do |f| %>
+<%= form_for :user, url: new_user_registration_path do |f| %>
 	<p>
 		<%= f.label :name %><br>
 		<%= f.text_field :name %>
