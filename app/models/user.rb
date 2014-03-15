@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 	has_one :team
-	validates_presence_of :name
+	validates_presence_of :name, :email
 
 	def self.create_teams
 		# go through all users and do something to each user

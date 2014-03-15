@@ -1,13 +1,14 @@
 <h1>See the teams:</h1>
-<h2><%= link_to 'Players', players_path %></h2>
-<table>
+<table class="team-table">
 	<% @teams.each do |team| %>
 		<tr>
-			<td>
+			<td class="team-bullet">
 				<%= team.name %>
 				<%= link_to 'Roster', team_path(team) %>
+				<%= link_to team.name, team_path(team) %>
 			</td>
 		</tr>
 	<% end %>
 </table>
+<h2><%= link_to 'Players', players_path %></h2>
 <h2><%= link_to 'Top', root_path %></h2>

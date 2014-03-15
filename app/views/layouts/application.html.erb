@@ -4,14 +4,31 @@
   <title>FantasyHockey</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div id="header"><span class="header-navigation-links"><%= link_to 'Home', root_path, {class: "header-navigation-link"} %><span></div>
-<div class="app-wrapper">
+<div id="header"><span class="header-navigation-links">
+	<ul class="header-navigation-bar">
+	
+		<li class="header-navigation-bar-elements">
+		<% if user_signed_in? %>
+    Signed in as <%= current_user.email %>. Not you?
+    <%= link_to 'Sign Out', destroy_user_session_path, class:"header-navigation-link", method: :delete %>
+  <% else %>
+    <%= link_to "Sign up", new_user_registration_path, {class: "header-navigation-link"} %> | <%= link_to "Sign in", new_user_session_path, {class: "header-navigation-link"} %>
+  <% end %></li>
+
+
+		<!-- <li class="header-navigation-bar-elements"><%= link_to 'Home', root_path, {class: "header-navigation-link"} %></li>
+		<li class="header-navigation-bar-elements"><%= link_to 'Sign In', new_user_session_path, {class: "header-navigation-link"} %></li> 
+		<li class="header-navigation-bar-elements"><%= link_to 'Sign Out', destroy_user_session_path, class:"header-navigation-link", method: :delete %></li> -->
+	</ul>
+<span></div>
 <!-- 	add devise flash messages -->
-	<p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+<!-- <div class="notice"><%= notice %></div>
+<div class="alert"><%= alert %></div> -->
+<div class="app-wrapper">
 	<%= yield %>
 </div>
 </body>

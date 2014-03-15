@@ -1,6 +1,7 @@
 class ContractsController < TeamsController
 	
 	before_filter :get_team
+	before_filter :authenticate_user!
 
 	def create
 		@team.contracts.create({player_id: get_player_id})

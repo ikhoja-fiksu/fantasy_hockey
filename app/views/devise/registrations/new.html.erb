@@ -1,0 +1,24 @@
+<h1>Welcome to Draft.ly</h1>
+<h2>We're the best fantasy hockey app you've ever seen. You can bet on it. </h2>
+
+<h3 class="form-fields">Build your dream team by signing up below:</h3>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="form-fields">
+  <div><%= f.label :name %>
+  <%= f.text_field :name, :autofocus => true %></div>
+
+  <div><%= f.label :email %>
+  <%= f.email_field :email, :autofocus => true %></div>
+
+  <div><%= f.label :password %>
+  <%= f.password_field :password %></div>
+
+  <div><%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation %></div>
+
+  <div><%= f.submit "Sign up" %></div>
+<% end %>
+</div>

@@ -4,6 +4,9 @@
 	<ul class="player-list"><% contracts.first(6).each do |contract| %>
 		<li class="player-list-bullet"><%= link_to contract.player.name, player_path(contract.player)%><%= link_to ' Edit', edit_player_path(contract.player) %>
 			<div class="position-details">
+				<ul>
+				<li><%= contract.player.height %></li>
+				<li><%= contract.player.weight %></li>
 			</div>
 		</li>
 		<% end %>
