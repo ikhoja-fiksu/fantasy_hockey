@@ -1,5 +1,8 @@
 class Score < ActiveRecord::Base
-	belongs_to :game
 	belongs_to :player
-	validates_presence_of :game_id, :player_id
+
+	VALID_SCORE_TYPES = ["goals", "assists"]
+
+	validates_presence_of :player_id
+	validates_inclusion_of :score_type, in: VALID_SCORE_TYPES
 end

@@ -18,6 +18,18 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use devise for authentication
 gem 'devise'
 
+# Get Rest Client gem
+gem 'rest-client'
+
+# Use Sidekiq for workers
+gem 'sidekiq'
+
+gem 'sinatra', require: false
+gem 'slim'
+
+# Use active support for indifferent access
+gem 'activesupport'
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 gem 'twitter-bootstrap-rails'
@@ -37,6 +49,7 @@ end
 
 group :development do
 	gem 'rails-footnotes'
+	gem 'pry-rails', :group => :development
 end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

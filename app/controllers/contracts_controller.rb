@@ -11,6 +11,11 @@ class ContractsController < TeamsController
 	def new
 	end
 
+	def destroy
+		Contract.find(params[:id]).destroy
+		redirect_to team_path(@team)
+	end
+
 	private
 
 		def get_team

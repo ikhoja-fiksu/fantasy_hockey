@@ -1,14 +1,18 @@
 <div class="player-container">
 	<div class="faceoff-circle"></div>
 	<div class="goalie-box"></div>
-	<ul class="player-list"><% contracts.first(6).each do |contract| %>
-		<li class="player-list-bullet"><%= link_to contract.player.name, player_path(contract.player)%><%= link_to ' Edit', edit_player_path(contract.player) %>
-			<div class="position-details">
-				<ul>
-				<li><%= contract.player.height %></li>
-				<li><%= contract.player.weight %></li>
-			</div>
-		</li>
+	<ul class="player-list">
+		<% contracts.first(6).each do |contract| %>
+			<li class="player-list-bullet">
+				<%= link_to contract.player.name, player_path(contract.player)%>
+				<%= link_to ' Edit', edit_player_path(contract.player) %> / 
+				<%= link_to ' Unsign', team_contract_path(@team, contract), method: :delete %>
+				<div class="position-details">
+					<ul>
+						<li><%= contract.player.total_goals %></li>
+					</ul>
+				</div>
+			</li>
 		<% end %>
 	</ul>
 </div>

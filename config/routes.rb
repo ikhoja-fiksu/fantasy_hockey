@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 FantasyHockey::Application.routes.draw do
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
@@ -10,6 +12,8 @@ FantasyHockey::Application.routes.draw do
     resources :contracts
   end
   resources :players
+
+  mount Sidekiq::Web, at: "/sidekiq"
   #resources :users
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

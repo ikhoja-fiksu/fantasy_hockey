@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140302175131) do
+ActiveRecord::Schema.define(version: 20140315220124) do
 
   create_table "contracts", force: true do |t|
     t.integer  "team_id"
@@ -20,17 +20,13 @@ ActiveRecord::Schema.define(version: 20140302175131) do
     t.datetime "updated_at"
   end
 
-  create_table "games", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "players", force: true do |t|
     t.string   "name"
-    t.integer  "height"
-    t.integer  "weight"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "external_player_id"
+    t.integer  "total_goals"
+    t.integer  "total_assists"
   end
 
   create_table "point_totals", force: true do |t|
@@ -42,10 +38,10 @@ ActiveRecord::Schema.define(version: 20140302175131) do
 
   create_table "scores", force: true do |t|
     t.integer  "player_id"
-    t.integer  "game_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "value"
+    t.string   "score_type"
   end
 
   create_table "teams", force: true do |t|

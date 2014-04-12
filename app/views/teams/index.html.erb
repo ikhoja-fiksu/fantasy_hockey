@@ -3,8 +3,6 @@
 	<% @teams.each do |team| %>
 		<tr>
 			<td class="team-bullet">
-				<%= team.name %>
-				<%= link_to 'Roster', team_path(team) %>
 				<%= link_to team.name, team_path(team) %>
 			</td>
 		</tr>
