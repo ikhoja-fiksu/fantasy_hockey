@@ -18,6 +18,9 @@ gem 'coffee-rails', '~> 4.0.0'
 # Use devise for authentication
 gem 'devise'
 
+#add gem required for Heroku
+gem 'rails_12factor'
+
 # Get Rest Client gem
 gem 'rest-client'
 
