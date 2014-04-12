@@ -16,7 +16,8 @@ class TeamsController < ApplicationController
 			redirect_to team_path(@team)
 		else
 			Team.create(user_id: current_user.id, name: creation_params)
-			redirect_to teams_path
+			@team = user_teams.first.id
+			redirect_to team_path(@team)
 		end
 	end
 
