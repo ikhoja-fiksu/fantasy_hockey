@@ -20,7 +20,6 @@ gem 'devise'
 
 #add gem required for Heroku
 gem 'rails_12factor'
-gem 'whenever', :require => false
 
 # Get Rest Client gem
 gem 'rest-client'
